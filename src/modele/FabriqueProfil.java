@@ -1,6 +1,25 @@
 package modele;
 
-public abstract class FabriqueProfil {
+public class FabriqueProfil {
 
-    public abstract void creerProfil(ProfilUtilisateur profilUtilisateur, String nom, String prenom, String mdp);
+    public static Profil creerProfil(ProfilUtilisateur profilUtilisateur, String nom, String prenom, String mdp){
+        Profil profil;
+        switch (profilUtilisateur){
+
+            case GERANT:
+                Personnel gerant = new Personnel(nom, prenom,mdp);
+                gerant.definirGerant();
+                profil = gerant;
+                break;
+
+            case PERSONNEL:
+                profil = new Personnel(nom, prenom,mdp);
+                break;
+
+            default:
+                profil = new Client(nom,prenom,mdp);
+                break;
+        }
+        return profil;
+    }
 }

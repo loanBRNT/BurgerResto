@@ -25,4 +25,9 @@ public class BDClient {
         listeClient.put(numeroClient,client);
         numeroClient++;
     }
+
+    @Override
+    public String toString(){
+        return "BDClient [listeClient=" + listeClient + "]";
+    }
 }

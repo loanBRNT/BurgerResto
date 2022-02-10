@@ -6,7 +6,7 @@ import modele.ProfilUtilisateur;
 import vueconsole.BoundarySIdentifierPersonnel;
 
 public class TestCasSIdentifierPersonnel {
-
+/*
     public static void main(String[] args) {
 
         // Mise en place de l'environnement
@@ -38,4 +38,6 @@ public class TestCasSIdentifierPersonnel {
         // prenom=Victor, login=Victor.Martin, mdp=gmv, connecte=true]}]
         // BDClient [listeClient={}]
     }
+
+ */
 }

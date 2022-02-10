@@ -6,7 +6,7 @@ import controleur.ControlVerifierIdentification;
 import modele.ProfilUtilisateur;
 
 public class TestCasVerifierIdentification {
-
+/*
 	public static void main(String[] args) {
 
 		// Mise en place de l'environnement
@@ -47,4 +47,6 @@ public class TestCasVerifierIdentification {
 		// Erreur d'identification : false
 
 	}
+
+ */
 }

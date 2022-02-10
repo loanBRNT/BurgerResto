@@ -10,8 +10,7 @@ public class TestCasCreerProfilClient {
         // Initialisation controleur du cas
         ControlCreerProfil controlCreerProfil = new ControlCreerProfil();
         // Initialisation vue du cas
-        BoundaryCreerProfilClient boundaryCreerProfilClient = new BoundaryCreerProfilClient(
-                controlCreerProfil);
+        BoundaryCreerProfilClient boundaryCreerProfilClient = new BoundaryCreerProfilClient(controlCreerProfil);
 
         // Lancement du cas
         boundaryCreerProfilClient.creerProfilClient();

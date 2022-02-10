@@ -1,6 +1,7 @@
 package vueconsole;
 
 import controleur.ControlCreerProfil;
+import modele.ProfilUtilisateur;
 
 public class BoundaryCreerProfilGerant {
 
@@ -15,7 +16,15 @@ public class BoundaryCreerProfilGerant {
 
     //methodes
 
-    public void CreerProfilGerant() {
+    public void creerProfilGerant() {
 
+        System.out.println("Veuillez entrez votre nom");
+        String nom = Clavier.entrerClavierString();
+        System.out.println("Veuillez entrez votre prénom");
+        String prenom = Clavier.entrerClavierString();
+        System.out.println("Veuillez entrez votre mdp");
+        String mdp = Clavier.entrerClavierString();
+
+        controlCreerProfil.creerProfil(ProfilUtilisateur.GERANT,nom,prenom,mdp);
     }
 }

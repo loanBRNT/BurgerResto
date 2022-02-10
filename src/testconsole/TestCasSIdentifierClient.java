@@ -6,7 +6,7 @@ import modele.ProfilUtilisateur;
 import vueconsole.BoundarySIdentifierClient;
 
 public class TestCasSIdentifierClient {
-
+/*
     public static void main(String[] args) {
         // Mise en place de l'environnement
         ControlCreerProfil controlCreerProfil = new ControlCreerProfil();
@@ -35,4 +35,6 @@ public class TestCasSIdentifierClient {
         // BDClient [listeClient={0=Client [nom=Dupond, prenom=Hector,
         // login=Hector.Dupond, mdp=cdh, connecte=true}]
     }
+
+ */
 }

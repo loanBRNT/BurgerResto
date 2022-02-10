@@ -25,4 +25,9 @@ public class BDPersonnel {
         listePersonnel.put(numeroPersonnel,personnel);
         numeroPersonnel++;
     }
+
+    @Override
+    public String toString(){
+        return "BDPersonnel [listePersonnel=" + listePersonnel + "]";
+    }
 }

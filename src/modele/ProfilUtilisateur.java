@@ -1,5 +1,5 @@
 package modele;
 
 public enum ProfilUtilisateur {
-    CLIENT, GERANT;
+    CLIENT, GERANT, PERSONNEL
 }
