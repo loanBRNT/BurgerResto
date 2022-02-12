@@ -14,6 +14,9 @@ public class Personnel extends Profil {
         gerant = true;
     }
 
+    public boolean isGerant() {
+        return gerant;
+    }
 
     @Override
     public String toString() {

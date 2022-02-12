@@ -5,12 +5,27 @@ public abstract class Profil {
     private String prenom;
     private String mdp;
     private String login;
+    private boolean connecte = false;
 
     public Profil(String nom, String prenom, String mdp) {
         this.nom = nom;
         this.prenom = prenom;
         this.mdp = mdp;
         this.login = prenom + "." + nom;
+    }
+
+    //METHODES
+
+    public boolean verifierCorrespondanceProfil(String login, String mdp){
+        return this.login.equals(login) && this.mdp.equals(mdp);
+    }
+
+    public void connexionProfil(){
+        connecte = true;
+    }
+
+    public boolean isConnecte() {
+        return connecte;
     }
 
     @Override

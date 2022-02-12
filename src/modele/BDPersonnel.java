@@ -26,6 +26,23 @@ public class BDPersonnel {
         numeroPersonnel++;
     }
 
+    public int connexionPersonnel(String login, String mdp){
+        int idClient = -1;
+        Personnel p;
+        for (int i : listePersonnel.keySet()){
+            p = listePersonnel.get(i);
+            if (p.verifierCorrespondanceProfil(login, mdp)){
+                p.connexionProfil();
+                idClient = i;
+            }
+        }
+        return idClient;
+    }
+
+    public Personnel trouverPersonnel(int numeroPersonnel){
+        return listePersonnel.get(numeroPersonnel);
+    }
+
     @Override
     public String toString(){
         return "BDPersonnel [listePersonnel=" + listePersonnel + "]";

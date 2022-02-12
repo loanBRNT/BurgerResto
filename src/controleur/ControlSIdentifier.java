@@ -12,8 +12,20 @@ public class ControlSIdentifier {
 
     //methodes
     public int sIdentifier(ProfilUtilisateur profilUtilisateur, String login, String mdp){
+        int num;
+        switch (profilUtilisateur){
+            case CLIENT:
+                num = bdClient.connexionClient(login, mdp);
+                break;
 
+            default:
+                num = bdPersonnel.connexionPersonnel(login, mdp);
+                break;
+        }
+        return num;
+    }
 
-        return 0;
+    public String visualiserBDUtilisateur() {
+        return (bdPersonnel + "\n" + bdClient);
     }
 }

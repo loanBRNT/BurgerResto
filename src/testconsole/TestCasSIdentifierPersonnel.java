@@ -6,7 +6,7 @@ import modele.ProfilUtilisateur;
 import vueconsole.BoundarySIdentifierPersonnel;
 
 public class TestCasSIdentifierPersonnel {
-/*
+
     public static void main(String[] args) {
 
         // Mise en place de l'environnement
@@ -20,7 +20,7 @@ public class TestCasSIdentifierPersonnel {
         BoundarySIdentifierPersonnel boundarySIdentifierPersonnel = new BoundarySIdentifierPersonnel(
                 controlSIdentifier);
         // Lancement du cas
-        int numPersonnel = boundarySIdentifierPersonnel.identifierPersonnel();
+        int numPersonnel = boundarySIdentifierPersonnel.sIdentifierPersonnel();
 
         // Verification de la bonne r�alisation du cas
         System.out.println("VERIFICATION");
@@ -39,5 +39,5 @@ public class TestCasSIdentifierPersonnel {
         // BDClient [listeClient={}]
     }
 
- */
+
 }

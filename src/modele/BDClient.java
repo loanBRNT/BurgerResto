@@ -26,6 +26,23 @@ public class BDClient {
         numeroClient++;
     }
 
+    public int connexionClient(String login, String mdp){
+        int idClient = -1;
+        Client c;
+        for (int i : listeClient.keySet()){
+            c = listeClient.get(i);
+            if (c.verifierCorrespondanceProfil(login, mdp)){
+                c.connexionProfil();
+                idClient = i;
+            }
+        }
+        return idClient;
+    }
+
+    public Client trouverClient(int numeroClient){
+        return listeClient.get(numeroClient);
+    }
+
     @Override
     public String toString(){
         return "BDClient [listeClient=" + listeClient + "]";
