@@ -2,6 +2,8 @@ package modele;
 
 public class Client extends Profil{
 
+    private CarteBancaire cb;
+
     public Client(String nom, String prenom, String mdp) {
         super(nom, prenom, mdp);
     }
@@ -10,6 +12,10 @@ public class Client extends Profil{
     public String toString() {
         return "Client[" +
                  super.toString() +
-                ']';
+                 ",carteBancaire=" + cb +']';
+    }
+
+    public void enregistrerCoordonnesBancaires(int numeroCarte, int dateCarte){
+        cb = new CarteBancaire(numeroCarte,dateCarte);
     }
 }

@@ -5,9 +5,9 @@ import controleur.ControlCommander;
 public class BoundaryCommander {
 
     private ControlCommander controlCommander;
-    private BoundaryEnregistrerDonneBanquaire boundaryEnregistrerDonneBanquaire;
+    private BoundaryEnregistrerCoordonneesBancaires boundaryEnregistrerDonneBanquaire;
 
-    public BoundaryCommander(ControlCommander c, BoundaryEnregistrerDonneBanquaire b){
+    public BoundaryCommander(ControlCommander c, BoundaryEnregistrerCoordonneesBancaires b){
         controlCommander = c;
         boundaryEnregistrerDonneBanquaire = b;
     }
