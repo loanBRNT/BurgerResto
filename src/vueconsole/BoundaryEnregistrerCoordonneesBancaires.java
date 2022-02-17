@@ -10,15 +10,19 @@ public class BoundaryEnregistrerCoordonneesBancaires {
         controlEnregisterDonneBanquaire = c;
     }
 
-    public void enregistrerCoordonneesBancaires(int numClient){
+    public boolean enregistrerCoordonneesBancaires(int numClient){
         System.out.println("Veuillez entrer votre numéro de Carte Bancaire");
         int numeroCarte = Clavier.entrerClavierInt();
         System.out.println("Veuillez saisir la date d'expiration de votre carte de bancaire (MMAA)");
         int dateCarte = Clavier.entrerClavierInt();
 
-        if (!controlEnregisterDonneBanquaire.enregistrerCoordonneesBancaires(numClient,numeroCarte,dateCarte)){
+        boolean carteValide = controlEnregisterDonneBanquaire.enregistrerCoordonneesBancaires(numClient,numeroCarte,dateCarte);
+
+        if (!carteValide){
             System.out.println("Votre carte n'est pas valide, votre commande ne peut aboutir");
         }
+
+        return carteValide;
     }
 
 }

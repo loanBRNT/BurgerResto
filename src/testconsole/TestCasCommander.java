@@ -7,7 +7,7 @@ import vueconsole.BoundaryCommander;
 import vueconsole.BoundaryEnregistrerCoordonneesBancaires;
 
 public class TestCasCommander {
-/*
+
 	public static void main(String[] args) {
 		// Mise en place de l'environnement
 		ControlCreerProfil controlCreerProfil = new ControlCreerProfil();
@@ -78,7 +78,5 @@ public class TestCasCommander {
 		// 1018
 		// Votre numero de commande est le : 1
 	}
-	     */
-
 
 }

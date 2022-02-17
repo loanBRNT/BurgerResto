@@ -2,7 +2,7 @@ package modele;
 
 public class Client extends Profil{
 
-    private CarteBancaire cb;
+    private CarteBancaire cb = null;
 
     public Client(String nom, String prenom, String mdp) {
         super(nom, prenom, mdp);
@@ -17,5 +17,9 @@ public class Client extends Profil{
 
     public void enregistrerCoordonnesBancaires(int numeroCarte, int dateCarte){
         cb = new CarteBancaire(numeroCarte,dateCarte);
+    }
+
+    public boolean verifierExistenceCarteBancaire(){
+        return (cb != null);
     }
 }

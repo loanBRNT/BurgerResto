@@ -31,6 +31,30 @@ public class Menu {
         if (!listeBoisson.contains(boisson)) listeBoisson.add(boisson);
     }
 
+    public List<Accompagnement> getListeAccompagnement() {
+        return listeAccompagnement;
+    }
+
+    public List<Boisson> getListeBoisson() {
+        return listeBoisson;
+    }
+
+    public List<Hamburger> getListeHamburger() {
+        return listeHamburger;
+    }
+
+    public Hamburger choixHamburger(int numeroHamburger){
+
+    }
+
+    public Boisson choixBoisson(int numeroBoisson){
+
+    }
+
+    public Accompagnement choixAccompagnement(int numeroAccompagnement){
+
+    }
+
     @Override
     public String toString() {
         return "Menu [" +

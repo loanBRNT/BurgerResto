@@ -12,8 +12,23 @@ public class BoundaryCommander {
         boundaryEnregistrerDonneBanquaire = b;
     }
 
-    public void commander(){
+    public void commander(int numClient){
 
+    }
+
+    private int selectionnerBurger(){
+
+        return 0;
+    }
+
+    private int selectionnerAccompagnement(){
+
+        return 0;
+    }
+
+    private int selectionnerBoisson(){
+
+        return 0;
     }
 
 }
