@@ -6,7 +6,16 @@ public class Commande {
     private Accompagnement accompagnement;
     private Boisson boisson;
     private int numeroCommandeAttribuee;
-    private int numeroCommande = 0;
+    private static int numeroCommande = 0;
+
+    public Commande(int numClient, Hamburger hamburger, Accompagnement accompagnement, Boisson boisson) {
+        numeroCommande++;
+        this.numClient = numClient;
+        this.hamburger = hamburger;
+        this.accompagnement = accompagnement;
+        this.boisson = boisson;
+        this.numeroCommandeAttribuee = numeroCommande;
+    }
 
     public int getNumeroCommandeAttribuee() {
         return numeroCommandeAttribuee;

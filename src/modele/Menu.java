@@ -44,15 +44,15 @@ public class Menu {
     }
 
     public Hamburger choixHamburger(int numeroHamburger){
-
+        return listeHamburger.get(numeroHamburger-1);
     }
 
     public Boisson choixBoisson(int numeroBoisson){
-
+        return listeBoisson.get(numeroBoisson-1);
     }
 
     public Accompagnement choixAccompagnement(int numeroAccompagnement){
-
+        return listeAccompagnement.get(numeroAccompagnement-1);
     }
 
     @Override

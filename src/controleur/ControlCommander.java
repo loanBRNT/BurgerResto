@@ -1,42 +1,64 @@
 package controleur;
 
-import modele.Menu;
+import modele.*;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class ControlCommander {
 
     private ControlVerifierIdentification controlVerifierIdentification;
     private Menu menu = Menu.getInstance();
+    private BDClient bdClient = BDClient.getInstance();
+    private BDCommande bdCommande = BDCommande.getInstance();
 
     public ControlCommander(ControlVerifierIdentification c){
         controlVerifierIdentification = c;
     }
 
-    public void verifierIdentification(int numclient){
-
+    public boolean verifierIdentification(int numclient){
+        return controlVerifierIdentification.verifierIdentification(ProfilUtilisateur.CLIENT,numclient);
     }
 
     public List<String> donnerListeHamburger(){
-
+        List<String> listeNomHamb = new ArrayList<>();
+        List<Hamburger> listHamb = menu.getListeHamburger();
+        for (Hamburger hamb : listHamb){
+            listeNomHamb.add(hamb.getNom());
+        }
+        return listeNomHamb;
     }
 
     public List<String> donnerListeAccompagnement(){
-
+        List<String> listeNomAccompagnement = new ArrayList<>();
+        List<Accompagnement> listeAccompagnement = menu.getListeAccompagnement();
+        for (Accompagnement accompagnement : listeAccompagnement){
+            listeNomAccompagnement.add(accompagnement.getNom());
+        }
+        return listeNomAccompagnement;
     }
 
     public List<String> donnerListeBoisson(){
-
+        List<String> listeNomBoisson = new ArrayList<>();
+        List<Boisson> listeBoisson = menu.getListeBoisson();
+        for (Boisson boisson : listeBoisson){
+            listeNomBoisson.add(boisson.getNom());
+        }
+        return listeNomBoisson;
     }
 
     public boolean verifierExistenceCarteBancaire(int numClient){
-
+        Client client = bdClient.trouverClient(numClient);
+        if (client != null) {
+            return client.verifierExistenceCarteBancaire();
+        }
         return false;
     }
 
-    public int enregistrerCommande(int numClient, int numeroHambirger, int numeroBoisson){
-
-
-        return 0;
+    public int enregistrerCommande(int numClient, int numeroHamburger, int numeroAccompagnement, int numeroBoisson){
+        Hamburger hamburger = menu.choixHamburger(numeroHamburger);
+        Accompagnement accompagnement = menu.choixAccompagnement(numeroAccompagnement);
+        Boisson boisson = menu.choixBoisson(numeroBoisson);
+        return bdCommande.enregistrerCommande(numClient,hamburger,accompagnement,boisson);
     }
 }

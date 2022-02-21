@@ -5,7 +5,6 @@ import java.util.Map;
 
 public class BDCommande {
     private Map<Integer, Commande> mapCommandes = new HashMap<>();
-    private int numeroCommande=0;
 
     private BDCommande(){}
 
@@ -20,7 +19,8 @@ public class BDCommande {
     }
 
     public int enregistrerCommande(int numClient, Hamburger hamburger, Accompagnement accompagnement, Boisson boisson){
-
-        return 0;
+        Commande commande = new Commande(numClient,hamburger,accompagnement,boisson);
+        mapCommandes.put(commande.getNumeroCommandeAttribuee(),commande);
+        return commande.getNumeroCommandeAttribuee();
     }
 }
