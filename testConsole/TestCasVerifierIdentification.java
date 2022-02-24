@@ -1,5 +1,3 @@
-package testconsole;
-
 import controleur.ControlCreerProfil;
 import controleur.ControlSIdentifier;
 import controleur.ControlVerifierIdentification;

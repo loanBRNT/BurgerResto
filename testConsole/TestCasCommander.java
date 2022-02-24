@@ -1,5 +1,3 @@
-package testconsole;
-
 import controleur.*;
 import modele.AlimentMenu;
 import modele.ProfilUtilisateur;

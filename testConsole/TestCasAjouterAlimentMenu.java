@@ -1,5 +1,3 @@
-package testconsole;
-
 import controleur.ControlAjouterAlimentMenu;
 import controleur.ControlCreerProfil;
 import controleur.ControlSIdentifier;

@@ -1,5 +1,3 @@
-package testconsole;
-
 import controleur.ControlCreerProfil;
 import controleur.ControlEnregistrerCoordonneesBancaires;
 import controleur.ControlSIdentifier;
