@@ -1,5 +1,9 @@
 package modele;
 
+import modele.Accompagnement;
+import modele.Boisson;
+import modele.Commande;
+import modele.Hamburger;
 import org.junit.jupiter.api.*;
 
 class CommandeTest {
@@ -7,29 +11,34 @@ class CommandeTest {
     private Boisson boisson = new Boisson("Coca chery");
     private Accompagnement accompagnement = new Accompagnement("King Fries Bacon");
     private Commande commande;
+    private int NUM_CLIENT = 10;
 
     @BeforeEach
     void setUp() throws Exception{
         Assumptions.assumeTrue(hamburger != null, "Hamburger non null");
         Assumptions.assumeTrue(boisson != null, "Boisson non null");
         Assumptions.assumeTrue(accompagnement != null, "Accompagnement non null");
-        commande = new Commande(100,hamburger,accompagnement,boisson);
-        commande.resetNumCommande();
+        NUM_CLIENT++;
+        Commande.resetNumCommande();
+        commande = new Commande(NUM_CLIENT,hamburger,accompagnement,boisson);
     }
 
     @Test
     void testCommande(){
-        Assertions.assertTrue(commande != null, "erreur constructeur commande");
+        Assertions.assertTrue(commande != null, "constructeur commande OK");
     }
 
     @Test
     void getNumeroCommandeAttribuee() {
         Assertions.assertTrue(commande.getNumeroCommandeAttribuee() == 1, "numero de la Commande Ok");
+        NUM_CLIENT++;
+        commande = new Commande(NUM_CLIENT,hamburger,accompagnement,boisson);
+        Assertions.assertTrue(commande.getNumeroCommandeAttribuee() == 2, "numero de la Commande Ok");
     }
 
     @Test
     void getNumClient() {
-        Assertions.assertTrue(commande.getNumClient() == 100, "numero Client OK");
+        Assertions.assertTrue(commande.getNumClient() == NUM_CLIENT, "numero Client OK");
     }
 
     @Test

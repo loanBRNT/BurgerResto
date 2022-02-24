@@ -37,7 +37,7 @@ public class Commande {
         return boisson;
     }
 
-    public void resetNumCommande() {
+    public static void resetNumCommande() {
         numeroCommande = 0;
     }
 }

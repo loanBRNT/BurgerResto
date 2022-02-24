@@ -16,4 +16,12 @@ public class CarteBancaire {
                 ", dateCarte=" + dateCarte +
                 ']';
     }
+
+    public int getDateCarte() {
+        return dateCarte;
+    }
+
+    public int getNumeroCarte() {
+        return numeroCarte;
+    }
 }

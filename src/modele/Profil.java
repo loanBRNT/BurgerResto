@@ -35,4 +35,22 @@ public abstract class Profil {
                 ", mdp='" + mdp + '\'' +
                 ", login='" + login + '\'';
     }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public String getMdp() {
+        return mdp;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+
 }
