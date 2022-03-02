@@ -43,6 +43,14 @@ public class BDClient {
         return listeClient.get(numeroClient);
     }
 
+    public int getNumeroClient() {
+        return numeroClient;
+    }
+
+    public Map<Integer, Client> getListeClient() {
+        return listeClient;
+    }
+
     @Override
     public String toString(){
         return "BDClient [listeClient=" + listeClient + "]";

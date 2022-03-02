@@ -15,15 +15,6 @@ class ClientTest extends ProfilTest{
         personnel = new Personnel(nomPersonnel,prenomPersonnel,mdpPersonnel);
     }
 
-    @Test
-    void testToString() {
-        assertEquals(client.toString(),"Client[" +
-                "nom='" + nomClient + '\'' +
-                ", prenom='" + prenomClient + '\'' +
-                ", mdp='" + mdpClient + '\'' +
-                ", login='" + prenomClient + "." + nomClient + '\'' +
-                ",carteBancaire=null]");
-    }
 
     @Test
     void enregistrerCoordonnesBancaires() {

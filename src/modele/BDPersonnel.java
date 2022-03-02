@@ -47,4 +47,12 @@ public class BDPersonnel {
     public String toString(){
         return "BDPersonnel [listePersonnel=" + listePersonnel + "]";
     }
+
+    public int getNumeroPersonnel() {
+        return numeroPersonnel;
+    }
+
+    public Map<Integer, Personnel> getListePersonnel() {
+        return listePersonnel;
+    }
 }

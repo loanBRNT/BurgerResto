@@ -1,9 +1,5 @@
 package modele;
 
-import modele.Accompagnement;
-import modele.Boisson;
-import modele.Commande;
-import modele.Hamburger;
 import org.junit.jupiter.api.*;
 
 class CommandeTest {
