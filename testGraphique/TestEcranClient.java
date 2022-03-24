@@ -1,6 +1,3 @@
-import vueGraphique.FrameClient;
-
-
 import controleur.ControlAjouterAlimentMenu;
 import controleur.ControlCommander;
 import controleur.ControlCreerProfil;
