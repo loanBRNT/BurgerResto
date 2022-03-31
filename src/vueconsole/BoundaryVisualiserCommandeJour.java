@@ -33,7 +33,7 @@ public class BoundaryVisualiserCommandeJour implements PropertyChangeListener {
             case ENREGISTRER_COMMANDE -> {
                 Commande commande = (Commande) evt.getNewValue();
                 Fichier.ecrire("Commande n" + commande.getNumeroCommandeAttribuee() + " : " + commande.getHamburger() + ", "
-                        + commande.getAccompagnement() + ", " + commande.getBoisson() + ".");
+                        + commande.getAccompagnement() + ", " + commande.getBoisson() + ".","ecranCuisinier");
             }
             case VIDER_COMMANDE_JOUR -> {
                 Fichier.effacer();

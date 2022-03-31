@@ -31,6 +31,6 @@ public class ThreadViderCommandeJour extends Thread{
         Calendar calendar = Calendar.getInstance();
         int minuteActuelle = calendar.get(Calendar.MINUTE);
 
-        return minuteActuelle == 43;
+        return minuteActuelle == 17;
     }
 }

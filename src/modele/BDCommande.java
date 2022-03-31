@@ -38,11 +38,9 @@ public class BDCommande {
         support.firePropertyChange(PropertyName.VIDER_COMMANDE_JOUR.toString(), null, null);
     }
 
-    /*
-    public Commande supprimerCommande(int numeroCommande){
-
+    public Commande trouverCommande(int numCommande){
+        return mapCommandes.get(numCommande);
     }
-    */
 
     public void addPropertyChangeListener(String propertyName, PropertyChangeListener listener){
         support.addPropertyChangeListener(propertyName,listener);

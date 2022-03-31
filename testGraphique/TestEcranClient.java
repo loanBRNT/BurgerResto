@@ -1,10 +1,4 @@
-import controleur.ControlAjouterAlimentMenu;
-import controleur.ControlCommander;
-import controleur.ControlCreerProfil;
-import controleur.ControlEnregistrerCoordonneesBancaires;
-import controleur.ControlSIdentifier;
-import controleur.ControlVerifierCoordonneesBancaires;
-import controleur.ControlVerifierIdentification;
+import controleur.*;
 import modele.AlimentMenu;
 import modele.ProfilUtilisateur;
 import vueGraphique.FrameClient;
@@ -17,6 +11,7 @@ public class TestEcranClient {
         ControlVerifierIdentification controlVerifierIdentification = new ControlVerifierIdentification();
         ControlAjouterAlimentMenu controlAjouterAlimentCarte = new ControlAjouterAlimentMenu(controlVerifierIdentification);
         ControlSIdentifier controlSIdentifier = new ControlSIdentifier();
+        ControlConsulterHistorique controlConsulterHistorique = new ControlConsulterHistorique();
 
         // senario pour le test
         controlAjouterAlimentCarte.ajouterAliment(AlimentMenu.HAMBURGER,
@@ -46,11 +41,11 @@ public class TestEcranClient {
         // cas commander
         ControlVerifierCoordonneesBancaires controlVerifierCoordonneesBancaires = new ControlVerifierCoordonneesBancaires();
         ControlEnregistrerCoordonneesBancaires controlEnregistrerCoordonneesBancaires = new ControlEnregistrerCoordonneesBancaires(controlVerifierCoordonneesBancaires);
-        ControlCommander controlCommande = new ControlCommander(controlVerifierIdentification);
+        ControlCommander controlCommande = new ControlCommander(controlVerifierIdentification, controlConsulterHistorique);
         new FrameClient(numClient, controlCommande,
-                controlEnregistrerCoordonneesBancaires);
+                controlEnregistrerCoordonneesBancaires,controlConsulterHistorique);
         new FrameClient(numClient2, controlCommande,
-                controlEnregistrerCoordonneesBancaires);
+                controlEnregistrerCoordonneesBancaires,controlConsulterHistorique);
     }
 }
 

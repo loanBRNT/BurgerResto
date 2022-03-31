@@ -5,9 +5,9 @@ import java.io.FileWriter;
 import java.io.IOException;
 
 public class Fichier {
-	public static void ecrire(String texte) {
+	public static void ecrire(String texte,String nomFic) {
 		try {
-			File f = new File("./ecranCuisinier.txt");
+			File f = new File("./" + nomFic + ".txt");
 			f.createNewFile();
 			FileWriter fw = new FileWriter(f, true);
 			fw.write(texte+"\n");

@@ -1,0 +1,8 @@
+Thu Mar 31 08:40:31 CEST 2022 : Numero de Commande: 1, hamburger: Aliment [nom=chickenBurger], accompagnement: Aliment [nom=frites], boisson: Aliment [nom=orangeBubbles]
+Thu Mar 31 08:57:16 CEST 2022 : Numero de Commande: 1, hamburger: Aliment [nom=baconBurger], accompagnement: Aliment [nom=frites], boisson: Aliment [nom=coca]
+Thu Mar 31 09:04:59 CEST 2022 : Numero de Commande: 1, hamburger: Aliment [nom=chickenBurger], accompagnement: Aliment [nom=frites], boisson: Aliment [nom=coca]
+Thu Mar 31 09:05:22 CEST 2022 : Numero de Commande: 2, hamburger: Aliment [nom=chickenBurger], accompagnement: Aliment [nom=pommesChips], boisson: Aliment [nom=orangeBubbles]
+Thu Mar 31 09:19:14 CEST 2022 : Num : 1 | baconBurger  frites orangeBubbles
+Thu Mar 31 09:20:24 CEST 2022 : Num : 1 | baconBurger  frites coca
+Thu Mar 31 09:21:29 CEST 2022 : Num : 1 | chickenBurger  frites coca
+Thu Mar 31 09:21:46 CEST 2022 : Num : 2 | cheeseBurger  pommesChips orangeBubbles

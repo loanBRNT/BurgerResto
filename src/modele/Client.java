@@ -1,6 +1,10 @@
 package modele;
 
-public class Client extends Profil{
+import java.util.HashMap;
+import java.util.Map;
+
+public class Client extends Profil {
+    private Map<String,Commande> historiqueCommande = new HashMap<>();
 
     private CarteBancaire cb = null;
 
@@ -21,5 +25,21 @@ public class Client extends Profil{
 
     public boolean verifierExistenceCarteBancaire(){
         return (cb != null);
+    }
+
+    public void ajouterCommandeAHistorique(String date, Commande commande){
+        historiqueCommande.put(date, commande);
+    }
+
+    public String historiqueClientString(){
+        String message = "";
+        for (String date : historiqueCommande.keySet()){
+            message += " - " + date + " : " + historiqueCommande.get(date).toString() + "\n";
+        }
+        return message;
+    }
+
+    public Map<String, Commande> getHistoriqueCommande() {
+        return historiqueCommande;
     }
 }

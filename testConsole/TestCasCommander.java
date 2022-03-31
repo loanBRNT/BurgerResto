@@ -2,6 +2,7 @@ import controleur.*;
 import modele.AlimentMenu;
 import modele.ProfilUtilisateur;
 import vueconsole.BoundaryCommander;
+import vueconsole.BoundaryConsulterHistorique;
 import vueconsole.BoundaryEnregistrerCoordonneesBancaires;
 
 public class TestCasCommander {
@@ -35,18 +36,23 @@ public class TestCasCommander {
 		ControlVerifierIdentification controlVerifierIdentification = new ControlVerifierIdentification();
 		ControlVerifierCoordonneesBancaires controlVerifierCoordonneesBancaire = new ControlVerifierCoordonneesBancaires();
 		ControlEnregistrerCoordonneesBancaires controlEnregistrerCoordonneesBancaires = new ControlEnregistrerCoordonneesBancaires(controlVerifierCoordonneesBancaire);
+		ControlConsulterHistorique controlConsulterHistorique = new ControlConsulterHistorique();
 
 		// Initialisation vue du cas & cas Inclus/etendu
 		BoundaryEnregistrerCoordonneesBancaires boundaryEnregistrerCoordonneesBancaires = new BoundaryEnregistrerCoordonneesBancaires(
 				controlEnregistrerCoordonneesBancaires);
 		BoundaryCommander boundaryCommander = new BoundaryCommander(
-				new ControlCommander(
-						controlVerifierIdentification),
+				new ControlCommander(controlVerifierIdentification,controlConsulterHistorique),
 				boundaryEnregistrerCoordonneesBancaires);
+		BoundaryConsulterHistorique boundaryConsulterHistorique = new BoundaryConsulterHistorique(controlConsulterHistorique);
+
 
 		// Lancement du cas
 		System.out.println("\nEcran client");
 		boundaryCommander.commander(numClient);
+		boundaryConsulterHistorique.consulterHistorique(numClient);
+		boundaryCommander.commander(numClient);
+		boundaryConsulterHistorique.consulterHistorique(numClient);
 
 		// Verification de la bonne realisation du cas
 		// Resultat du test

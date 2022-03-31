@@ -40,4 +40,15 @@ public class Commande {
     public static void resetNumCommande() {
         numeroCommande = 0;
     }
+
+    /* VERSION POUR ANCIEN TEST
+    public String toString(){
+        return "Numero de Commande: " + numeroCommandeAttribuee + ", hamburger: " + hamburger + ", accompagnement: " + accompagnement + ", boisson: " + boisson;
+    }
+
+     */
+
+    public String toString(){
+        return "Num : " + numeroCommandeAttribuee + " | " + hamburger.getNom() + "  " + accompagnement.getNom() + " " + boisson.getNom();
+    }
 }

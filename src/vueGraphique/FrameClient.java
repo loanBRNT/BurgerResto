@@ -1,6 +1,7 @@
 package vueGraphique;
 
 import controleur.ControlCommander;
+import controleur.ControlConsulterHistorique;
 import controleur.ControlEnregistrerCoordonneesBancaires;
 import controleur.ControlVerifierCoordonneesBancaires;
 
@@ -20,14 +21,14 @@ public class FrameClient extends JFrame {
 
     private PanCommander panCommander;
     private PanModifierProfil panModifierProfil = new PanModifierProfil();
-    private PanHistorique panHistorique = new PanHistorique();
+    private PanHistorique panHistorique;
 
     private JPanel panAccueil = new JPanel();
     // Declaration et creation du gestionnaire des cartes (CardLayout)
     private CardLayout carte = new CardLayout();
 
         // Le constructeur
-        public FrameClient (int numClient, ControlCommander controlCommander, ControlEnregistrerCoordonneesBancaires controlEnregistrerCoordonneesBancaires) {
+        public FrameClient (int numClient, ControlCommander controlCommander, ControlEnregistrerCoordonneesBancaires controlEnregistrerCoordonneesBancaires, ControlConsulterHistorique controlConsulterHistorique) {
             // initialisation des attributs metiers
             this.numClient = numClient;
             // mise en forme de la frame (titre, dimension, ...)
@@ -37,9 +38,12 @@ public class FrameClient extends JFrame {
             // initialisation des differents panels : appel a leur methode d'initialisation
 
             PanEnregistrerCoordonneesBancaire panEnregistrerCoordonneesBancaire = new PanEnregistrerCoordonneesBancaire(controlEnregistrerCoordonneesBancaires);
+
             panCommander = new PanCommander(controlCommander, panEnregistrerCoordonneesBancaire);
             panCommander.initialisation();
             panModifierProfil.initialisation();
+
+            panHistorique = new PanHistorique(controlConsulterHistorique);
             panHistorique.initialisation();
             panEnregistrerCoordonneesBancaire.initialisation();
             // ajout des pannels dans le ContentPane de la Frame
@@ -73,7 +77,10 @@ public class FrameClient extends JFrame {
             });
 
             MenuItem historique = new MenuItem("Historique");
-            historique.addActionListener(event -> carte.show(panContents, "Historique"));
+            historique.addActionListener(event -> {
+                panHistorique.historique(numClient);
+                carte.show(panContents, "Historique");
+            });
 
             MenuItem modifierProfil = new MenuItem("Modifier Profil");
             modifierProfil.addActionListener(event -> carte.show(panContents, "Modifier Profil"));

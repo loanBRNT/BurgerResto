@@ -1,11 +1,4 @@
-import controleur.ControlAjouterAlimentMenu;
-import controleur.ControlCommander;
-import controleur.ControlCreerProfil;
-import controleur.ControlEnregistrerCoordonneesBancaires;
-import controleur.ControlSIdentifier;
-import controleur.ControlVerifierCoordonneesBancaires;
-import controleur.ControlVerifierIdentification;
-import controleur.ControlVisualiserCommandeJour;
+import controleur.*;
 import modele.AlimentMenu;
 import modele.ProfilUtilisateur;
 import modele.ThreadViderCommandeJour;
@@ -50,13 +43,14 @@ public class TestEcranCuisinier {
 		ControlVerifierCoordonneesBancaires controlVerifierCoordonneesBancaire = new ControlVerifierCoordonneesBancaires();
 		ControlEnregistrerCoordonneesBancaires controlEnregistrerCoordonneesBancaires = new ControlEnregistrerCoordonneesBancaires(
 				controlVerifierCoordonneesBancaire);
+		ControlConsulterHistorique controlConsulterHistorique = new ControlConsulterHistorique();
 
 		// cas commander
-		ControlCommander controlCommande = new ControlCommander(controlVerifierIdentification);
+		ControlCommander controlCommande = new ControlCommander(controlVerifierIdentification, controlConsulterHistorique);
 		new FrameClient(numClient, controlCommande,
-				controlEnregistrerCoordonneesBancaires);
+				controlEnregistrerCoordonneesBancaires,controlConsulterHistorique);
 		new FrameClient(numClient2, controlCommande,
-				controlEnregistrerCoordonneesBancaires);
+				controlEnregistrerCoordonneesBancaires,controlConsulterHistorique);
         
       
         // cas visualisation commande du jour

@@ -1,11 +1,4 @@
-import 	controleur.ControlAjouterAlimentMenu;
-import controleur.ControlCommander;
-import controleur.ControlCreerProfil;
-import controleur.ControlEnregistrerCoordonneesBancaires;
-import controleur.ControlSIdentifier;
-import controleur.ControlVerifierCoordonneesBancaires;
-import controleur.ControlVerifierIdentification;
-import controleur.ControlVisualiserCommandeJour;
+import controleur.*;
 import modele.AlimentMenu;
 import modele.ProfilUtilisateur;
 //import modele.ThreadViderCommandeJour;
@@ -53,11 +46,12 @@ public class TestCasVisualiserCommandeJour {
 		ControlVerifierCoordonneesBancaires controlVerifierCoordonneesBancaire = new ControlVerifierCoordonneesBancaires();
 		ControlEnregistrerCoordonneesBancaires controlEnregistrerCoordonneesBancaires = new ControlEnregistrerCoordonneesBancaires(
 				controlVerifierCoordonneesBancaire);
+		ControlConsulterHistorique controlConsulterHistorique = new ControlConsulterHistorique();
 
 		// Initialisation vue du cas & cas Inclus/etendu
 		BoundaryEnregistrerCoordonneesBancaires boundaryEnregistrerCoordonneesBancaires = new BoundaryEnregistrerCoordonneesBancaires(
 				controlEnregistrerCoordonneesBancaires);
-		BoundaryCommander boundaryCommander = new BoundaryCommander(new ControlCommander(controlVerifierIdentification),
+		BoundaryCommander boundaryCommander = new BoundaryCommander(new ControlCommander(controlVerifierIdentification, controlConsulterHistorique),
 				boundaryEnregistrerCoordonneesBancaires);
 
 		// creation pour la visualisation de la commande
